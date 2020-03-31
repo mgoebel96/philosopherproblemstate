@@ -1,6 +1,7 @@
 class Fork {
 
     boolean taken;
+    int id;
 
     synchronized void put() {
         // Fork is placed back on the table. -> status: not taken
@@ -18,6 +19,14 @@ class Fork {
 
     public boolean isTaken() {
         return taken;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }
