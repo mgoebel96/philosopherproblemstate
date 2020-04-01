@@ -42,7 +42,18 @@ public class PhilosophersDesk {
         Thread herderThread = new Thread(herder);
         herderThread.start();
 
+        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
+
         Runnable controller = () -> {
+            if(!platonThread.isAlive() && !herderThread.isAlive() && !aristotelesThread.isAlive() && !fichteThread.isAlive() && !schlegelThread.isAlive()){
+                platon.stop();
+                herder.stop();
+                platon.stop();
+                aristoteles.stop();
+                schlegel.stop();
+                executor.shutdown();
+                System.out.println("Der Tisch ist kaputt...");
+            }
             if (philosophers[0].state.equals("hungry") && philosophers[1].state.equals("hungry") && philosophers[2].state.equals("hungry") && philosophers[3].state.equals("hungry") && philosophers[4].state.equals("hungry") ) {
                 System.out.println("Es haben alle Philosophen hunger!");
                 try {
@@ -73,7 +84,6 @@ public class PhilosophersDesk {
                 }
             }
         };
-        ScheduledExecutorService executor = Executors.newSingleThreadScheduledExecutor();
         executor.scheduleAtFixedRate(controller, 0, 4, TimeUnit.SECONDS);
         Thread task2Thread = new Thread(controller);
         task2Thread.start();

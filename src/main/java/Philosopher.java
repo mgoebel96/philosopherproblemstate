@@ -8,7 +8,7 @@ public class Philosopher implements Runnable {
     int id;
     Fork right, left;
     boolean rightF, leftF;
-
+    private volatile boolean exit = false;
     String state;
 
     Random random = new Random();
@@ -21,7 +21,8 @@ public class Philosopher implements Runnable {
     }
 
     public void run() {
-        do {
+        int i = 100;
+        while( i > 0 ) {
             try {
                 // Philosopher is thinking
                 Logger.printOut (name + " philosphiert.");
@@ -54,7 +55,7 @@ public class Philosopher implements Runnable {
             left.setId(-1);
             right.put();
             left.put();
-        } while (true);
+        }
     }
 
     public boolean hasRightFork() {
@@ -71,5 +72,9 @@ public class Philosopher implements Runnable {
 
     public void setLeftF(boolean leftF) {
         this.leftF = leftF;
+    }
+
+    public void stop(){
+        exit = true;
     }
 }
