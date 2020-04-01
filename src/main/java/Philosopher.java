@@ -22,7 +22,7 @@ public class Philosopher implements Runnable {
 
     public void run() {
         int i = 100;
-        while( i > 0 ) {
+        while( i > 0 && !exit) {
             try {
                 // Philosopher is thinking
                 Logger.printOut (name + " philosphiert.");
