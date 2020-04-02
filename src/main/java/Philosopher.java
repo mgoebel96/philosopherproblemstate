@@ -21,14 +21,14 @@ public class Philosopher implements Runnable {
     }
 
     public void run() {
-        int i = 100;
+        int i = 30;
         while( i > 0 && !exit) {
             try {
                 // Philosopher is thinking
-                Logger.printOut (name + " philosphiert.");
+                MyLogger.printOut (name + " philosphiert.");
                 state = "wait";
                 sleep((int) (random.nextDouble()*1000));
-                Logger.printOut (name + " hat Hunger.");
+                MyLogger.printOut (name + " hat Hunger.");
                 PhilosophersDesk.report = name;
                 // Philosopher is hungry
                 state = "hungry";
@@ -45,16 +45,17 @@ public class Philosopher implements Runnable {
                     sleep(100);
                 }
                 state = "eating";
-                Logger.printOut(name + " hat zwei Gabeln. Er kann essen.");
+                MyLogger.printOut(name + " hat zwei Gabeln. Er kann essen.");
                 // holding two forks -> can eat now
                 sleep((int) (random.nextDouble() * 1000));
             } catch (InterruptedException e) {
-                Logger.printOut (e.getMessage());
+                MyLogger.printOut (e.getMessage());
             }
             right.setId(-1);
             left.setId(-1);
             right.put();
             left.put();
+            i--;
         }
     }
 

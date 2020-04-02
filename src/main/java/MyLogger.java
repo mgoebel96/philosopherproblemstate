@@ -1,6 +1,6 @@
-public class Logger {
+public class MyLogger {
 
-    private Logger() {
+    private MyLogger() {
         throw new IllegalStateException("Logger class");
     }
 

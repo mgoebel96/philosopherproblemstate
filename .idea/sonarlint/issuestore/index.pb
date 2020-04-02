@@ -9,3 +9,5 @@ N
 src/main/java/Philosopher.java,3\f\3fb7308e7d43e4579c1ea5134334e45870439042
 I
 src/main/java/Logger.java,9\3\930d9b913afb3c10010af7509a6a2260cbbd2765
+J
+.idea/libraries/jdk1_8.xml,2\a\2a825fc1c623fffb6cda2d545ce047e305817e66
