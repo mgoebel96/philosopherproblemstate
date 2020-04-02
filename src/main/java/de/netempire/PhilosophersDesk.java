@@ -1,3 +1,10 @@
+package de.netempire;
+
+import de.netempire.classes.Fork;
+import de.netempire.classes.Philosopher;
+import de.netempire.logger.MyLogger;
+import de.netempire.logger.ResultLogger;
+
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -10,7 +17,7 @@ import static java.lang.Thread.sleep;
 
 public class PhilosophersDesk {
 
-    static String report;
+    private static String report;
 
     public static void main(String[] args) {
         PhilosophersDesk.startProcess();
@@ -61,8 +68,8 @@ public class PhilosophersDesk {
             if (philosophers[0].state.equals("hungry") && philosophers[1].state.equals("hungry") && philosophers[2].state.equals("hungry") && philosophers[3].state.equals("hungry") && philosophers[4].state.equals("hungry") ) {
                 System.out.println("Es haben alle Philosophen hunger!");
                 try {
-                    MyLogger.printOut(report + " legt seine Gabeln wieder auf den Tisch.");
-                    Optional<Philosopher> lastPhiloso = Arrays.stream(philosophers).filter(p -> p.name.equals(report)).findFirst();
+                    MyLogger.printOut(getReport() + " legt seine Gabeln wieder auf den Tisch.");
+                    Optional<Philosopher> lastPhiloso = Arrays.stream(philosophers).filter(p -> p.name.equals(getReport())).findFirst();
                     int idLastPhiloso = lastPhiloso.map(philosopher -> philosopher.id - 1).orElse(0);
                     if (Arrays.asList(philosophers).get(idLastPhiloso).right.isTaken()) {
                         Arrays.asList(philosophers).get(idLastPhiloso).right.put();
@@ -96,5 +103,13 @@ public class PhilosophersDesk {
     public static int computeDuration(Date to, Date from) {
         long difference = from.getTime() - to.getTime();
         return (int) (difference/1000);
+    }
+
+    public static String getReport() {
+        return report;
+    }
+
+    public static void setReport(String report) {
+        PhilosophersDesk.report = report;
     }
 }

@@ -1,17 +1,18 @@
-import java.util.Random;
+package de.netempire.classes;
+
+import de.netempire.PhilosophersDesk;
+import de.netempire.logger.MyLogger;
 
 import static java.lang.Thread.sleep;
 
 public class Philosopher implements Runnable {
 
-    String name;
-    int id;
-    Fork right, left;
-    boolean rightF, leftF;
+    public String name;
+    public int id;
+    public Fork right, left;
+    public boolean rightF, leftF;
     private volatile boolean exit = false;
-    String state;
-
-    Random random = new Random();
+    public String state;
 
     public Philosopher(String name, int id, Fork right, Fork left){
         this.name = name;
@@ -27,16 +28,16 @@ public class Philosopher implements Runnable {
                 // Philosopher is thinking
                 MyLogger.printOut (name + " philosphiert.");
                 state = "wait";
-                sleep((int) (random.nextDouble()*1000));
+                sleep(1000);
                 MyLogger.printOut (name + " hat Hunger.");
-                PhilosophersDesk.report = name;
+                PhilosophersDesk.setReport(name);
                 // Philosopher is hungry
                 state = "hungry";
                 // taking right
                 right.get();
                 right.setId(id);
                 // turn left (critical moment)
-                sleep((int) (random.nextDouble()*1000));
+                sleep(1000);
                 // taking left
                 left.get();
                 left.setId(id);
@@ -47,7 +48,7 @@ public class Philosopher implements Runnable {
                 state = "eating";
                 MyLogger.printOut(name + " hat zwei Gabeln. Er kann essen.");
                 // holding two forks -> can eat now
-                sleep((int) (random.nextDouble() * 1000));
+                sleep(1000);
             } catch (InterruptedException e) {
                 MyLogger.printOut (e.getMessage());
             }

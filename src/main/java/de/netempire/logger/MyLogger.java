@@ -1,3 +1,5 @@
+package de.netempire.logger;
+
 public class MyLogger {
 
     private MyLogger() {

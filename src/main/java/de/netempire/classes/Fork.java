@@ -1,15 +1,17 @@
-class Fork {
+package de.netempire.classes;
 
-    boolean taken;
-    int id;
+public class Fork {
 
-    synchronized void put() {
+    private boolean taken;
+    private int id;
+
+    public synchronized void put() {
         // Fork is placed back on the table. -> status: not taken
         taken = false;
         notify();
     }
 
-    synchronized void get() throws InterruptedException {
+    public synchronized void get() throws InterruptedException {
         // Fork is taken from the table. -> status: taken
         while (taken) {
             wait(); // wait until the fork is back on the table.

@@ -1,3 +1,5 @@
+package de.netempire.logger;
+
 import java.io.IOException;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
@@ -21,9 +23,7 @@ public class ResultLogger {
             fh.setFormatter(formatter);
             // the following statement is used to log any messages
             logger.info(printText);
-        } catch (SecurityException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (SecurityException | IOException e) {
             e.printStackTrace();
         }
     }
