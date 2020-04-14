@@ -102,7 +102,10 @@ public class PhilosophersDesk {
         executor.scheduleAtFixedRate(controller, 0, 4, TimeUnit.SECONDS);
         Thread controllerThread = new Thread(controller);
         controllerThread.start();
+        System.out.println("ende");
     }
+
+    //todo Methoden
 
     public static int computeDuration(Date to, Date from) {
         long difference = from.getTime() - to.getTime();

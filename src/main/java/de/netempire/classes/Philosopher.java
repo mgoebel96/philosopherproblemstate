@@ -47,7 +47,7 @@ public class Philosopher implements Runnable {
                     sleep(100);
                 }
                 state = "eating";
-                MyLogger.printOut(name + " hat zwei Gabeln. Er kann essen.");
+                MyLogger.printOut(name + " hat zwei Gabel. Er kann essen.");
                 // holding two forks -> can eat now
                 sleep(eatingTime);
             } catch (InterruptedException e) {
