@@ -1,10 +1,4 @@
 
-r
-java:S1104"PMake left a static final constant or non-public and provide accessors if needed.(°‘çñùÿÿÿÿ8çø·×“.
-s
-java:S1104"QMake right a static final constant or non-public and provide accessors if needed.(°‘çñùÿÿÿÿ8çø·×“.
-t
-java:S1104"RMake rightF a static final constant or non-public and provide accessors if needed.(âã¤õüÿÿÿÿ8çø·×“.
 s
 java:S1104"QMake leftF a static final constant or non-public and provide accessors if needed.(âã¤õüÿÿÿÿ8çø·×“.
 n
@@ -12,5 +6,13 @@ java:S1104"QMake state a static final constant or non-public and provide acces
 m
 java:S1104
 "PMake name a static final constant or non-public and provide accessors if needed.( þÍ¾8õÇ¾×“.
+r
+java:S1104"PMake left a static final constant or non-public and provide accessors if needed.(°‘çñùÿÿÿÿ8çø·×“.
+s
+java:S1104"QMake right a static final constant or non-public and provide accessors if needed.(°‘çñùÿÿÿÿ8çø·×“.
 p
 java:S1104"NMake id a static final constant or non-public and provide accessors if needed.(ÍéÌ‘øÿÿÿÿ8õÇ¾×“.
+t
+java:S1104"RMake rightF a static final constant or non-public and provide accessors if needed.(âã¤õüÿÿÿÿ8çø·×“.
+T
+java:S1135'"2Complete the task associated to this TODO comment.(Ãßæ¿üÿÿÿÿ8ÆñöÄ—.
