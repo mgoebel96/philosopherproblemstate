@@ -9,6 +9,7 @@
         <module name="philosopherproblemonlyone" />
         <module name="philosopherproblem" />
         <module name="philosopherproblemwithoutsemaphore" />
+        <module name="ppwithoutsemaphore" />
       </profile>
     </annotationProcessing>
   </component>

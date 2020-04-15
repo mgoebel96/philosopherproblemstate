@@ -7,14 +7,14 @@ import static java.lang.Thread.sleep;
 
 public class Philosopher implements Runnable {
 
-    public String name;
-    public int id;
-    public Fork right, left;
-    public boolean rightF, leftF;
-    private volatile boolean exit = false;
-    public String state;
-    private int eatingTime;
+    String name;
 
+    int id;
+    Fork right, left;
+    boolean rightF, leftF;
+    String state;
+    private volatile boolean exit = false;
+    private int eatingTime;
     public Philosopher(String name, int id, Fork right, Fork left){
         this.name = name;
         this.id = id;
@@ -65,10 +65,6 @@ public class Philosopher implements Runnable {
         return rightF;
     }
 
-    public void setRightF(boolean rightF) {
-        this.rightF = rightF;
-    }
-
     public boolean hasLeftFork() {
         return leftF;
     }
@@ -83,5 +79,25 @@ public class Philosopher implements Runnable {
 
     public void setEatingTime(int eatingTime) {
         this.eatingTime = eatingTime;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public Fork getRight() {
+        return right;
+    }
+
+    public Fork getLeft() {
+        return left;
+    }
+
+    public String getState() {
+        return state;
     }
 }
